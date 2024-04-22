@@ -1,0 +1,62 @@
+.menuView {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #125488;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  height: auto;
+  width: 70vw;
+  max-width: 100%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.button {
+  width: 20vh;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.buttonText {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

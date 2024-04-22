@@ -1,0 +1,5 @@
+{
+  "START_APP_ROUTE": "/",
+  "BASE_ROUTE": "/speechTherapy",
+  "MAIN_MENU_ROUTE": "/mainMenu"
+}

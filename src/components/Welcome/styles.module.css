@@ -1,0 +1,59 @@
+/************************************************************************************************************
+ *                                                                                                          *
+ * File: styles.module.css                                                                                  *
+ * Author: Adnana Catrinel Dragut                                                                           *
+ * Description: CSS with the style of the Start App View                                                    *
+ * Version: 1.1                                                                                             *
+ *                                                                                                          *
+ ************************************************************************************************************/
+
+.container {
+  height: 100vh;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #125488;
+}
+
+.row {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.rowTitle {
+  height: 50vh;
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.rowButton {
+  height: 20vh;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 50vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+.buttonText {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}

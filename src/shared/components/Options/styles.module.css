@@ -1,0 +1,30 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.button {
+  width: 20vh;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonText {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
