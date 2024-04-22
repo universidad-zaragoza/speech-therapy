@@ -31,6 +31,7 @@ const WelcomeView: React.FC = () => {
               classStyle={styles.button}
               path="/mainMenu"
               type="button"
+              isDisabled={false}
             >
               <p className={styles.buttonText}>Comenzar</p>
             </Button>
