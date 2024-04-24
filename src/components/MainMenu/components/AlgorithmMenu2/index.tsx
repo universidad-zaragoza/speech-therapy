@@ -1,6 +1,6 @@
 /************************************************************************************************************
  *                                                                                                          *
- * File: ResponseMenuView.tsx                                                                               *
+ * File: AlgorithmMenuView.tsx                                                                              *
  * Author: Adnana Catrinel Dragut                                                                           *
  * Description: View with application's data loading progress                                               *
  * Version: 1.0                                                                                             *
@@ -15,7 +15,7 @@ import OptionsView, {
 /**
  * Menu properties
  */
-interface ResponseMenuViewProps {
+interface AlgorithmMenuViewProps {
   handleNextButtonClick: any;
   handlePreviousButtonClick: any;
 }
@@ -23,10 +23,10 @@ interface ResponseMenuViewProps {
 /**
  * View with application's progress
  *
- * @returns ResponseMenuView
+ * @returns AlgorithmMenuView
  */
-const ResponseMenuView: React.FC<ResponseMenuViewProps> = (
-  props: ResponseMenuViewProps
+const AlgorithmMenuView: React.FC<AlgorithmMenuViewProps> = (
+  props: AlgorithmMenuViewProps
 ) => {
   /* Props of this View  */
   const { handleNextButtonClick, handlePreviousButtonClick } = props;
@@ -40,10 +40,10 @@ const ResponseMenuView: React.FC<ResponseMenuViewProps> = (
 
   const optionsItems: FormCheckItemProps[] = [
     {
-      label: "Respuesta en texto",
+      label: "YOLOv8",
     },
     {
-      label: "Respuesta sobre imagen",
+      label: "InsightFace",
     },
   ];
 
@@ -55,7 +55,7 @@ const ResponseMenuView: React.FC<ResponseMenuViewProps> = (
       onClick: handlePreviousButtonClick,
     },
     {
-      id: "next",
+      id: "finish",
       path: "/mainMenu",
       label: "Siguiente",
       onClick: handleNextButtonClick,
@@ -63,10 +63,10 @@ const ResponseMenuView: React.FC<ResponseMenuViewProps> = (
   ];
 
   return (
-    <MenuView title={"4.- RESPUESTA"} navLinks={navLinks} buttons={menuButtons}>
-      <OptionsView variableId="algorithm-id" items={optionsItems} />
+    <MenuView title={"2.- ALGORITMO"} navLinks={navLinks} buttons={menuButtons}>
+      <OptionsView variableId="response-id" items={optionsItems} />
     </MenuView>
   );
 };
 
-export default ResponseMenuView;
+export default AlgorithmMenuView;

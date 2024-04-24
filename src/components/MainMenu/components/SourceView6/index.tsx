@@ -1,73 +1,71 @@
 /************************************************************************************************************
  *                                                                                                          *
- * File: MainMenuView.tsx                                                                                   *
+ * File: SourceView.tsx                                                                                     *
  * Author: Adnana Catrinel Dragut                                                                           *
  * Description: View with application's data loading progress                                               *
  * Version: 1.0                                                                                             *
  *                                                                                                          *
  ************************************************************************************************************/
-import useMainMenuController from "./useMainMenuController";
-import TaskMenuView from "./components/TaskMenu1";
-import ModeMenuView from "./components/ModeMenu4";
-import ResponseMenuView from "./components/ResponseMenu3";
-import React, { ReactNode } from "react";
-import SourceMenuView from "./components/SourceMenu5";
-import AlgorithmMenuView from "./components/AlgorithmMenu2";
-import SourceView from "./components/SourceView6";
+import { useSelector } from "react-redux";
+import { FacialModuleRootState } from "../../../../shared/redux/slices/facialModuleSlice";
+import { ReactNode } from "react";
+import UploadImagesView from "./Image/components/UploadImages";
+import UploadVideoView from "./Video/components/UploadVideo";
+import TakeImageView from "./Image/components/TakeImage";
+
+/**
+ * Menu properties
+ */
+interface SourceViewProps {
+  handleNextButtonClick: any;
+  handlePreviousButtonClick: any;
+}
 
 /**
  * View with application's progress
  *
- * @returns MainMenuView
+ * @returns SourceView
  */
-const MainMenuView: React.FC = () => {
+const SourceView: React.FC<SourceViewProps> = (props: SourceViewProps) => {
   let viewContent: ReactNode;
 
-  // Controller of this view
-  const { menuNumber, handleNextButtonClick, handlePreviousButtonClick } =
-    useMainMenuController();
+  /* Props of this View  */
+  const { handleNextButtonClick, handlePreviousButtonClick } = props;
 
-  switch (menuNumber) {
-    case 1:
+  const source = useSelector(
+    (state: FacialModuleRootState) => state.facialModuleState.variables.source
+  );
+
+  console.log("+++ Inside SourceMenuView - source => " + source);
+
+  switch (source) {
+    case "Subir imágenes":
       viewContent = (
-        <TaskMenuView handleNextButtonClick={handleNextButtonClick} />
-      );
-      break;
-    case 2:
-      viewContent = (
-        <AlgorithmMenuView
+        <UploadImagesView
           handleNextButtonClick={handleNextButtonClick}
           handlePreviousButtonClick={handlePreviousButtonClick}
         />
       );
       break;
-    case 3:
+    case "Tomar foto":
       viewContent = (
-        <ResponseMenuView
+        <TakeImageView
           handleNextButtonClick={handleNextButtonClick}
           handlePreviousButtonClick={handlePreviousButtonClick}
         />
       );
       break;
-    case 4:
+    case "Subir vídeo":
       viewContent = (
-        <ModeMenuView
+        <UploadVideoView
           handleNextButtonClick={handleNextButtonClick}
           handlePreviousButtonClick={handlePreviousButtonClick}
         />
       );
       break;
-    case 5:
+    case "Grabar vídeo":
       viewContent = (
-        <SourceMenuView
-          handleNextButtonClick={handleNextButtonClick}
-          handlePreviousButtonClick={handlePreviousButtonClick}
-        />
-      );
-      break;
-    case 6:
-      viewContent = (
-        <SourceView
+        <UploadVideoView
           handleNextButtonClick={handleNextButtonClick}
           handlePreviousButtonClick={handlePreviousButtonClick}
         />
@@ -80,4 +78,4 @@ const MainMenuView: React.FC = () => {
   return <div>{viewContent}</div>;
 };
 
-export default MainMenuView;
+export default SourceView;

@@ -1,6 +1,6 @@
 /************************************************************************************************************
  *                                                                                                          *
- * File: AlgorithmMenuView.tsx                                                                              *
+ * File: ResponseMenuView.tsx                                                                               *
  * Author: Adnana Catrinel Dragut                                                                           *
  * Description: View with application's data loading progress                                               *
  * Version: 1.0                                                                                             *
@@ -15,7 +15,7 @@ import OptionsView, {
 /**
  * Menu properties
  */
-interface AlgorithmMenuViewProps {
+interface ResponseMenuViewProps {
   handleNextButtonClick: any;
   handlePreviousButtonClick: any;
 }
@@ -23,10 +23,10 @@ interface AlgorithmMenuViewProps {
 /**
  * View with application's progress
  *
- * @returns AlgorithmMenuView
+ * @returns ResponseMenuView
  */
-const AlgorithmMenuView: React.FC<AlgorithmMenuViewProps> = (
-  props: AlgorithmMenuViewProps
+const ResponseMenuView: React.FC<ResponseMenuViewProps> = (
+  props: ResponseMenuViewProps
 ) => {
   /* Props of this View  */
   const { handleNextButtonClick, handlePreviousButtonClick } = props;
@@ -40,10 +40,10 @@ const AlgorithmMenuView: React.FC<AlgorithmMenuViewProps> = (
 
   const optionsItems: FormCheckItemProps[] = [
     {
-      label: "YOLOv8",
+      label: "Respuesta en texto",
     },
     {
-      label: "InsightFace",
+      label: "Respuesta sobre imagen",
     },
   ];
 
@@ -55,18 +55,18 @@ const AlgorithmMenuView: React.FC<AlgorithmMenuViewProps> = (
       onClick: handlePreviousButtonClick,
     },
     {
-      id: "finish",
+      id: "next",
       path: "/mainMenu",
-      label: "Acabar",
+      label: "Siguiente",
       onClick: handleNextButtonClick,
     },
   ];
 
   return (
-    <MenuView title={"5.- ALGORITMO"} navLinks={navLinks} buttons={menuButtons}>
-      <OptionsView variableId="response-id" items={optionsItems} />
+    <MenuView title={"3.- RESPUESTA"} navLinks={navLinks} buttons={menuButtons}>
+      <OptionsView variableId="algorithm-id" items={optionsItems} />
     </MenuView>
   );
 };
 
-export default AlgorithmMenuView;
+export default ResponseMenuView;

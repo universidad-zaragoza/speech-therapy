@@ -1,6 +1,6 @@
 /************************************************************************************************************
  *                                                                                                          *
- * File: ImageSourceMenuView.tsx                                                                            *
+ * File: VideoSourceMenuView.tsx                                                                            *
  * Author: Adnana Catrinel Dragut                                                                           *
  * Description: View with application's data loading progress                                               *
  * Version: 1.0                                                                                             *
@@ -15,7 +15,7 @@ import OptionsView, {
 /**
  * Menu properties
  */
-interface ImageSourceMenuViewProps {
+interface VideoSourceMenuViewProps {
   handleNextButtonClick: any;
   handlePreviousButtonClick: any;
 }
@@ -23,10 +23,10 @@ interface ImageSourceMenuViewProps {
 /**
  * View with application's progress
  *
- * @returns ImageSourceMenuView
+ * @returns VideoSourceMenuView
  */
-const ImageSourceMenuView: React.FC<ImageSourceMenuViewProps> = (
-  props: ImageSourceMenuViewProps
+const VideoSourceMenuView: React.FC<VideoSourceMenuViewProps> = (
+  props: VideoSourceMenuViewProps
 ) => {
   /* Props of this View  */
   const { handleNextButtonClick, handlePreviousButtonClick } = props;
@@ -40,10 +40,10 @@ const ImageSourceMenuView: React.FC<ImageSourceMenuViewProps> = (
 
   const optionsItems: FormCheckItemProps[] = [
     {
-      label: "Subir imágenes",
+      label: "Subir vídeo",
     },
     {
-      label: "Tomar foto",
+      label: "Grabar vídeo",
     },
   ];
 
@@ -64,7 +64,7 @@ const ImageSourceMenuView: React.FC<ImageSourceMenuViewProps> = (
 
   return (
     <MenuView
-      title={"3.- FUENTE IMAGEN"}
+      title={"5.- FUENTE VÍDEO"}
       navLinks={navLinks}
       buttons={menuButtons}
     >
@@ -73,4 +73,4 @@ const ImageSourceMenuView: React.FC<ImageSourceMenuViewProps> = (
   );
 };
 
-export default ImageSourceMenuView;
+export default VideoSourceMenuView;

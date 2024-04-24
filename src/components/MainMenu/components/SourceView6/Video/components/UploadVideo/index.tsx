@@ -1,21 +1,20 @@
 /************************************************************************************************************
  *                                                                                                          *
- * File: VideoSourceMenuView.tsx                                                                            *
+ * File: UploadVideo.tsx                                                                                    *
  * Author: Adnana Catrinel Dragut                                                                           *
  * Description: View with application's data loading progress                                               *
  * Version: 1.0                                                                                             *
  *                                                                                                          *
  ************************************************************************************************************/
-import { NavLinkProps } from "../../../../../shared/components/Navbar";
-import MenuView, { ButtonProps } from "../../../../../shared/components/Menu";
-import OptionsView, {
-  FormCheckItemProps,
-} from "../../../../../shared/components/Options";
-
+import { NavLinkProps } from "../../../../../../../shared/components/Navbar";
+import MenuView, {
+  ButtonProps,
+} from "../../../../../../../shared/components/Menu";
+import { Form } from "react-bootstrap";
 /**
  * Menu properties
  */
-interface VideoSourceMenuViewProps {
+interface UploadVideoProps {
   handleNextButtonClick: any;
   handlePreviousButtonClick: any;
 }
@@ -23,10 +22,10 @@ interface VideoSourceMenuViewProps {
 /**
  * View with application's progress
  *
- * @returns VideoSourceMenuView
+ * @returns ImageSourceMenuView
  */
-const VideoSourceMenuView: React.FC<VideoSourceMenuViewProps> = (
-  props: VideoSourceMenuViewProps
+const UploadVideoView: React.FC<UploadVideoProps> = (
+  props: UploadVideoProps
 ) => {
   /* Props of this View  */
   const { handleNextButtonClick, handlePreviousButtonClick } = props;
@@ -35,15 +34,6 @@ const VideoSourceMenuView: React.FC<VideoSourceMenuViewProps> = (
     {
       label: "Salir",
       href: "/",
-    },
-  ];
-
-  const optionsItems: FormCheckItemProps[] = [
-    {
-      label: "Subir vídeo",
-    },
-    {
-      label: "Grabar vídeo",
     },
   ];
 
@@ -64,13 +54,19 @@ const VideoSourceMenuView: React.FC<VideoSourceMenuViewProps> = (
 
   return (
     <MenuView
-      title={"3.- FUENTE VÍDEO"}
+      title={"6- SUBIR VÍDEO"}
       navLinks={navLinks}
       buttons={menuButtons}
     >
-      <OptionsView variableId="source-id" items={optionsItems} />
+      <Form.Group controlId="formFileMultiple" className="mb-3">
+        <Form.Label>Seleccione un vídeo en formato MP4</Form.Label>
+        <Form.Control
+          type="file"
+          style={{ borderColor: "#000000", color: "#000000" }}
+        />
+      </Form.Group>
     </MenuView>
   );
 };
 
-export default VideoSourceMenuView;
+export default UploadVideoView;
