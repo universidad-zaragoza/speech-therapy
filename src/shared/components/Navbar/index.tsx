@@ -6,7 +6,8 @@
  * Version: 1.0                                                                                             *
  *                                                                                                          *
  ************************************************************************************************************/
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 /**
  * NavbarProps properties
@@ -32,6 +33,20 @@ const NavbarView: React.FC<NavbarProps> = (props: NavbarProps) => {
   /* Props of this View  */
   const { links } = props;
 
+  const navigate = useNavigate();
+
+  const handleButtonClick = (_path: string) => {
+    navigate(_path);
+  };
+
+  const buttonStyle = {
+    color: "white",
+    fontWeight: "bold",
+    backgroundColor: "transparent",
+    border: "none",
+    textDecoration: "none",
+  };
+
   return (
     <Navbar collapseOnSelect expand="md" bg="dark">
       <Container style={{ width: "100%" }}>
@@ -51,13 +66,16 @@ const NavbarView: React.FC<NavbarProps> = (props: NavbarProps) => {
             style={{ width: "100%", color: "white", fontWeight: "bold" }}
           >
             {links.map((link, index) => (
-              <Nav.Link
+              <Button
                 key={index}
-                style={{ color: "white", fontWeight: "bold" }}
-                href={link.href}
+                variant="link"
+                style={buttonStyle}
+                onClick={() => {
+                  handleButtonClick(link.href);
+                }}
               >
                 {link.label}
-              </Nav.Link>
+              </Button>
             ))}
           </Nav>
         </Navbar.Collapse>

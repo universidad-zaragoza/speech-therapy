@@ -32,6 +32,10 @@ const TaskMenuView: React.FC<TaskMenuViewProps> = (
 
   const navLinks: NavLinkProps[] = [
     {
+      label: "Debug",
+      href: "/debug",
+    },
+    {
       label: "Salir",
       href: "/",
     },
